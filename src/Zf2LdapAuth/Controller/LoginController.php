@@ -30,7 +30,6 @@ class LoginController extends AbstractActionController {
             $form->setData($request->getPost());
             if ($form->isValid()) {
                 $data = $form->getData();
-
                 try {
                     $auth = $ldap->authenticate($data->name, $data->password);
                     if ($auth === TRUE) {
